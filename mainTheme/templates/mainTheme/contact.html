@@ -1,0 +1,166 @@
+{% extends 'mainTheme/base.html' %}
+{% load staticfiles %}
+
+{% block bkgImage %}{% static "images/bg/husky-2407157_640.jpg" %}{% endblock %}
+
+
+            {% block extraCss %}
+            {% endblock %}
+
+{% block contactMenu %}w3-red{% endblock %}
+
+
+            {% block content %}
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-animate-right" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+ <div class="bgimg-1" >
+    contact
+    <div style="margin-top:80px;margin-bottom:80px">
+
+    <h1 class="w3-jumbo w3-text-red" ><b>AFRODOO</b></h1>
+    <h1 class="w3-xxxlarge w3-text-white"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+
+    </div>
+contact
+</div>
+
+
+
+
+
+<!-- -->
+<div class="w3-container">
+  <h2>Services</h2>
+  <p></p>
+  <ul class="w3-ul w3-card-4 w3-black w3-text-red">
+<li class="w3-bar w3-hover-white" id="pel1" onclick="set('pel1' , 0 , 10)" >Backend</li>
+<li class="w3-bar w3-hover-white" id="pel2" onclick="set('pel2' , 1 , 10)" >Frontend design</li>
+<li class="w3-bar w3-hover-white" id="pel3" onclick="set('pel3' , 2 , 10)" >Custom backend plugins</li>
+<li class="w3-bar w3-hover-white" id="pel4" onclick="set('pel4' , 3 , 10)" >Custom frontend plugins</li>
+<li class="w3-bar w3-hover-white" id="pel5" onclick="set('pel5' , 4 , 10)" >HTML, CSS, JS, fixing</li>
+<li class="w3-bar w3-hover-white" id="pel6" onclick="set('pel6' , 5 , 10)" >Fix current Django project</li>
+  </ul>
+</div>
+
+
+<div class="w3-container">
+  <h2>Pricing Quotes</h2>
+
+
+
+
+  <div class="w3-panel w3-leftbar w3-black">
+
+ <p id="demo" class="w3-xxlarge w3-serif">0</p>
+  </div>
+</div>
+
+
+<!-- The Contact Section -->
+  <div class="w3-container w3-black w3-text-red">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-red w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+<!-- End page content -->
+</div>
+
+            {% endblock %}
+
+            {% block extraJs %}
+
+<script>
+
+var price=0;
+var tog = [0,0,0,0,0,0];
+
+var data = [
+{
+icon: "fas fa-cogs",
+title: "Backend Setup",
+price: 10
+},
+{
+icon: "fas fa-edit",
+title: "Frontend design",
+price: 20
+},
+{
+icon: "fas fa-cog",
+title: "Custom backend plugins",
+price: 20
+},
+{
+icon: "fas fa-pen-square",
+title: "Custom frontend plugins",
+price: 20
+},
+{
+icon: "fas fa-wrench",
+title: "HTML, CSS, JS, fixing",
+price: 20
+},
+{
+icon: "fas fa-expand-arrows-alt",
+title: "Fix current Django project",
+price: 20
+},
+
+
+];
+
+
+function set (n , t , v){
+var line1 = "<span class='w3-bar-item w3-button w3-white w3-xlarge w3-right'>+</span>";
+var line2 = "<i class='"+data[t].icon+"'></i>";
+var line3 = "<div class='w3-bar-item'> <span class='w3-large'>"+data[t].title+"</span><br><span>$"+data[t].price+"</span></div>";
+
+if (tog[t] === 0 ){
+line1 = "<span class='w3-bar-item w3-button w3-red w3-text-white w3-xlarge w3-right'>-</span>";
+line2 = "<i class='"+data[t].icon+" w3-jumbo w3-animate-left'></i>";
+line3 = "";
+tog[t] = 1;
+price += data[t].price;
+}else {
+tog[t] = 0;
+price -= data[t].price;
+}
+
+document.getElementById(n).innerHTML = line1+line2+line3;
+document.getElementById("demo").innerHTML = "$"+price;
+
+}
+
+
+</script>
+
+            {% endblock %}
+
