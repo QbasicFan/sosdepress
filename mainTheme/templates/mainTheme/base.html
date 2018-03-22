@@ -1,0 +1,182 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<title>Afrodoo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+            {% block extraCss %}
+            {% endblock %}
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {
+    font-size:16px;
+    background-image: url("{% static "images/bg.png" %}");
+    background-repeat:repeat;
+}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+.blackBg {
+
+    background-image: url("{% static "images/blackBg.jpg" %}");
+    background-repeat:repeat;
+
+}
+
+
+    div#load_screen{
+        background: #123;
+        opacity: 0.45;
+        position: fixed;
+        z-index:10;
+        top : 0;
+        width: 100%;
+    }
+
+    div#load_screen > div#loading {
+        color: #FFF;
+        width:120px;
+        height:24px;
+        margin: 300px auto;
+    }
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #f44336;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/**/
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('{% block bkgImage %}http://www.decodingdelicious.com/wp-content/uploads/2013/05/French-Fries-Source-Brett-Jordan-Flickr-Creative-Commons-Jan-9-2012.jpg{% endblock %}');
+    min-height: 100%;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1 {
+        background-attachment: scroll;
+    }
+}
+
+</style>
+<body>
+
+
+
+<div id="load_screen"><div id="loading"><div class="loader"></div></div></div>
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-black blackBg w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64 w3-text-red w3-xxlarge">AFRODOO</h3>
+<hr>
+<p class="w3-padding-32">Lorem ipsum <i class="w3-text-red">dolor</i> sit amet, consectetur <i class="w3-text-red">adipiscing</i> elit.</p>
+<hr class="w3-red">
+  </div>
+  <div class="w3-bar-block">
+    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white {% block homeMenu %}{% endblock %}">Home</a>
+    <a href="/service/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white {% block serviceMenu %}{% endblock %}">Services {% block serviceIco %}<i class="w3-right fas fa-plus-square"></i>{% endblock %}</a>
+            {% block servList %}{% endblock %}
+<!--
+    <a href="/portfolio/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white {% block portfolioMenu %}{% endblock %}">Portfolio {% block portfolioIco %}<i class="w3-right fas fa-plus-square"></i>{% endblock %}</a>
+            {% block portList %}{% endblock %}
+-->
+    <a href="/contact/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white {% block contactMenu %}{% endblock %}">Contact</a>
+
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-black blackBg w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
+  <span class="w3-text-red w3-xlarge">AFRODOO</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+
+
+
+<!-- !PAGE CONTENT! -->
+            {% block content %}
+            {% endblock %}
+
+
+
+
+
+
+
+<div class="w3-black blackBg w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"></div>
+
+
+            {% block extraJs %}
+            {% endblock %}
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+//
+
+            window.addEventListener("load" , function () {
+                var load_screen = document.getElementById("load_screen");
+                document.body.removeChild(load_screen);
+            });
+
+
+</script>
+
+</body>
+</html>
