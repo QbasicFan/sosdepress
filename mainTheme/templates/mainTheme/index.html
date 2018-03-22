@@ -1,0 +1,150 @@
+{% extends 'mainTheme/base.html' %}
+{% load staticfiles %}
+
+{% block bkgImage %}{% static "images/bg/lioness-2034816_640.jpg" %}{% endblock %}
+
+
+
+{% block homeMenu %}w3-red{% endblock %}
+
+
+
+            {% block content %}
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-animate-right" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <!-- Header -->
+ <div class="bgimg-1" >
+    home
+    <div style="margin-top:80px;margin-bottom:80px">
+
+    <h1 class="w3-jumbo w3-text-red" ><b>AFRODOO</b></h1>
+    <h1 class="w3-xxxlarge w3-text-white"><b>Home.</b></h1>
+    <hr style="width:50px;border:5px solid white" class="w3-round">
+
+    </div>
+home
+</div>
+
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-black"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+
+
+    <div class="w3-row-padding">
+        <div class="w3-third">
+            <div class="w3-card-4 w3-center  w3-white w3-hover-black ">
+            <br>
+            <i class="fas fa-arrows-alt w3-jumbo w3-text-red"></i>
+            <p class="w3-text-red">Full Stack Dev</p>
+            <p>Aliquam elementum nec diam a efficitur. Etiam arcu urna, hendrerit et dui pellentesque, consectetur pharetra quam. Aenean facilisis enim id tortor placerat eleifend.</p>
+            <a href="/service/">Read More</a>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4 w3-center w3-white w3-hover-black">
+            <br>
+            <i class="fas fa-search w3-jumbo w3-text-red"></i>
+            <p class="w3-text-red">Research and Dev</p>
+            <p>Aliquam elementum nec diam a efficitur. Etiam arcu urna, hendrerit et dui pellentesque, consectetur pharetra quam. Aenean facilisis enim id tortor placerat eleifend.</p>
+            <a href="/service/">Read More</a>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4 w3-center w3-white w3-hover-black">
+            <br>
+            <i class="fas fa-graduation-cap w3-jumbo w3-text-red"></i>
+            <p class="w3-text-red">Teaching Dev</p>
+            <p>Aliquam elementum nec diam a efficitur. Etiam arcu urna, hendrerit et dui pellentesque, consectetur pharetra quam. Aenean facilisis enim id tortor placerat eleifend.</p>
+            <a href="/service/">Read More</a>
+            </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Photo grid (modal) -->
+  <div class="w3-container"  style="margin-top:75px">
+
+    <h1 class="w3-xxxlarge w3-text-black"><b>Latest Projects.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+
+  <div class="w3-row-padding">
+    <div class="w3-third">
+     <a href="/portfolio/SOSDEPRESS/"> <img src="http://yoon84.files.wordpress.com/2010/02/monkey_face.jpg" class="w3-image"  alt="Concrete meets bricks" ></a>
+    </div>
+    <div class="w3-third">
+      <a href="/portfolio/peppersoups/"><img src="http://yoon84.files.wordpress.com/2010/02/monkey_face.jpg" class="w3-image"  alt="Concrete meets bricks"></a>
+    </div>
+    <div class="w3-third">
+      <a href="/portfolio/mcatmom/"><img src="http://yoon84.files.wordpress.com/2010/02/monkey_face.jpg" class="w3-image"  alt="Concrete meets bricks"></a>
+    </div>
+
+  </div>
+<br>
+     <button class="w3-bar-item w3-button w3-red">Read More</button>
+
+</div>
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+<!-- -->
+<div class="w3-container w3-light-grey" id="contact" style="margin-top:75px">
+<div class="w3-row">
+    <div class="w3-quarter">
+        <a href="https://www.python.org/" target="_blank"><img src="{% static "images/front/python.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="https://www.djangoproject.com/" target="_blank"><img src="{% static "images/front/django.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="http://flask.pocoo.org/" target="_blank"><img src="{% static "images/front/flask.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="https://angularjs.org/" target="_blank"><img src="{% static "images/front/angular.png" %}" class="w3-hover-red"></a>
+    </div>
+
+</div>
+
+<div class="w3-row">
+    <div class="w3-quarter">
+        <a href="https://www.tensorflow.org/" target="_blank"><img src="{% static "images/front/tensorflow.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="http://scikit-learn.org/stable/" target="_blank"><img src="{% static "images/front/scikit-learn.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="https://nodejs.org/en/" target="_blank"><img src="{% static "images/front/node.png" %}" class="w3-hover-red"></a>
+    </div>
+    <div class="w3-quarter">
+        <a href="https://reactjs.org/" target="_blank"><img src="{% static "images/front/react.png" %}" class="w3-hover-red"></a>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- End page content -->
+</div>
+
+            {% endblock %}
