@@ -1,0 +1,109 @@
+{% extends 'mainTheme/base.html' %}
+{% load staticfiles %}
+
+{% block serviceMenu %}w3-red{% endblock %}
+
+            {% block content %}
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+
+<!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="about">
+    <h1 class="w3-jumbo w3-text-red"><b>AFRODOO</b></h1>
+    <h1 class="w3-xxxlarge w3-text-black"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+
+
+<div class="w3-row">
+  <div class="w3-half w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>Websites</h1>
+    </div>
+    <div class="w3-padding-64">
+      <a href="" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">Website Editor Tool</a>
+      <a href="" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">Advanced Template</a>
+      <a href="" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">Something Very is Coming</a>
+      <a href="" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">Logo, business card, flyer and design</a>
+    </div>
+  </div>
+  <div class="w3-half w3-white w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1>Tech support</h1>
+
+      <div class="w3-left-align w3-padding-large">
+        <p><i class="fas fa-dot-circle"></i> Fix coding error in your site, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-dot-circle"></i> Upgrade your website, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-dot-circle"></i> Migrate your website , lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- -->
+<div class="w3-row">
+  <div class="w3-half w3-white w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>Consulting</h1>
+    </div>
+
+      <div class="w3-left-align w3-padding-large">
+        <p><i class="fas fa-dot-circle"></i> Website review, for performance and esthic improvement, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-dot-circle"></i> SEO testing and improvement, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-dot-circle"></i> Let you know about new business opportunities, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-dot-circle"></i> Join a private list of high quality backlink, lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
+      </div>
+
+  </div>
+  <div class="w3-half w3-black w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1>Teaching</h1>
+      <img src="/w3images/avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%">
+      <div class="w3-left-align w3-padding-large">
+        <p><i class="fas fa-play-circle"></i> Video courses on programming in languages such as Javascript, Python, Php, Ruby, C++, Java and more. Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><i class="fas fa-file-code"></i> One on one teaching. Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+<!-- -->
+
+
+<!-- End page content -->
+
+            {% endblock %}
+
+
+            {% block extraJs %}
+
+            <script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-red";
+}
+</script>
+
+
+
+
+
+            {% endblock %}
+
+
